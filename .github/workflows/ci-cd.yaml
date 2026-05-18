@@ -20,7 +20,11 @@ jobs:
           java-version: '17'
 
       - name: Compile Java Program
-        run: javac Main.java
+        run: |
+          javac Main.java
+          javac Calculator.java
 
       - name: Run Java Program
-        run: java Main
+        run: |
+          java Main
+          java Calculator
