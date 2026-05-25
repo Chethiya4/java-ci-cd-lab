@@ -1,6 +1,13 @@
 name: "Build Status Action"
 description: "Returns build result"
 
+inputs:
+ username:
+  required:true
+  description:"User Name"
+
+
+
 outputs:
   result:
     description: "Build result"
@@ -10,7 +17,6 @@ runs:
   using: "composite"
 
   steps:
-    - name: Set Output
-      id: set-status 
-      run: echo "result=Build Successful" >> $GITHUB_OUTPUT 
+    - name: Create Greeting
+      run: echo "message=Hello ${{ inputs.username}}"" >> $GITHUB_OUTPUT 
       shell: bash

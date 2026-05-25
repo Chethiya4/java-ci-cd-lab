@@ -20,9 +20,12 @@ jobs:
           java-version: '17'
 
       
-      - name: Run Custom Action
-        id: my-build-step
+      - name: Run Greeting Action
+        id: greet-action
         uses: ./.github/actions/java-build
+        with:
+         username:Chethiya 
 
-      - name: Print the Build Status
-        run: echo "The status is ${{ steps.my-build-step.outputs.result }}"
+
+      - name: Show Greeting
+        run: echo "${{ steps.greet-action.outputs.message }}"
