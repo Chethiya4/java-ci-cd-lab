@@ -20,6 +20,8 @@ jobs:
           java-version: '17'
 
       - name: Run Custom Action
+        id: custom-action
         uses: ./.github/actions/java-build
-        with:
-          file-name: 'Main'
+
+      - name: Print the Build Status
+        run: echo " ${{ steps.my-build-step.outputs.result }}"
