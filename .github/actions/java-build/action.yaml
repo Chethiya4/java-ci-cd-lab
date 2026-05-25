@@ -2,15 +2,15 @@ name: "Build Status Action"
 description: "Returns build result"
 
 outputs:
- result:
-  description: "Build result"
+  result:
+    description: "Build result"
+    value: ${{ steps.set-status.outputs.result }} 
 
 runs:
   using: "composite"
 
   steps:
     - name: Set Output
-      run: echo "result=Build Successful" >> $GITHUIB_OUTPUT
+      id: set-status 
+      run: echo "result=Build Successful" >> $GITHUB_OUTPUT 
       shell: bash
-
-    

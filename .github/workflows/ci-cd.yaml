@@ -19,9 +19,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      
       - name: Run Custom Action
-        id: custom-action
+        id: my-build-step
         uses: ./.github/actions/java-build
 
       - name: Print the Build Status
-        run: echo " ${{ steps.my-build-step.outputs.result }}"
+        run: echo "The status is ${{ steps.my-build-step.outputs.result }}"
